@@ -14,7 +14,7 @@ The Parisii Beatles Web App is a browser-based educational application designed 
 - Bingo caller and classroom activity tools
 - Dark mode and high-contrast accessibility settings
 - Adjustable text sizing
-- Responsive design for different screen sizes
+- Designed for desktop and modern web browsers 
 - Local storage support for saved settings and scores
 
 ## Technologies Used
