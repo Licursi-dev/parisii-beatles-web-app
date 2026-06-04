@@ -1,38 +1,37 @@
 # Parisii Beatles Web App
 
-An accessibility-focused classroom engagement web app featuring Beatles-themed educational games and activities.
+An accessibility-focused classroom engagement web application featuring Beatles-themed games, quizzes and learning activities.
 
 ## Overview
 
-The Parisii Beatles Web App is a browser-based classroom toolkit designed to make lessons more interactive, structured, and accessible. It combines Beatles-themed content with practical classroom tools, including seat allocation, bingo, quizzes, and a custom Battleships game.
+The Parisii Beatles Web App is a browser-based educational application designed to support classroom engagement through interactive Beatles-themed activities. The project combines entertainment with learning by providing a collection of tools and games suitable for group participation and classroom use.
 
 ## Features
 
-- Seat selector for classroom allocation
-- Beatles-themed bingo caller
-- Team-based quiz mode
-- Custom Battleships game based on Beatles chart position and year of release data
-- Dark mode
-- High-contrast mode
+- Interactive seat allocation system
+- Beatles-themed quiz game with team scoring
+- Custom Battleships game based on Beatles release and chart data
+- Bingo caller and classroom activity tools
+- Dark mode and high-contrast accessibility settings
 - Adjustable text sizing
-- Responsive layout
-- Local storage support
+- Responsive design for different screen sizes
+- Local storage support for saved settings and scores
 
 ## Technologies Used
 
 - HTML5
 - CSS3
-- JavaScript ES Modules
-- Local Storage
+- JavaScript (ES6 Modules)
+- Local Storage API
 
 ## Accessibility
 
-The app includes accessibility-focused features such as dark mode, high-contrast display, scalable text controls, and clear navigation to support inclusive classroom use.
+Accessibility was a key consideration throughout development. The application includes scalable text controls, high-contrast display options, dark mode support and clear navigation to help provide an inclusive user experience.
+
+## Educational Use
+
+The application was designed to support classroom engagement and can be used for quizzes, team activities, seating plans and interactive learning sessions.
 
 ## Purpose
 
-This project was created as a portfolio web app to demonstrate frontend development, interactive UI design, accessibility awareness, and modular JavaScript structure.
-
-## Author
-
-Christian Licursi
+This project was created to demonstrate front-end development, accessibility awareness, user interface design and modular JavaScript development. It forms part of a wider portfolio showcasing web development and educational technology projects.
