@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Parisii Beatles Web App</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <h1>The Parisii Beatles Web App</h1>
+
+    <div class="accessibility-controls" aria-label="Accessibility controls">
+      <button id="btn-theme" type="button" aria-pressed="false" title="Toggle dark mode">🌙</button>
+      <button id="btn-contrast" type="button" aria-pressed="false" title="Toggle high contrast">◐</button>
+      <button id="btn-font" type="button" aria-pressed="false" title="Toggle larger text">A+</button>
+      <button id="btn-font-reset" type="button" title="Reset text size">A</button>
+    </div>
+  </header>
+
+  <nav class="app-nav" aria-label="Main navigation">
+    <button data-game="home" type="button">Home</button>
+    <button data-game="seat" type="button">Seat Selector</button>
+    <button data-game="bingo" type="button">Bingo</button>
+    <button data-game="quiz" type="button">Quiz</button>
+    <button data-game="battleships" type="button">Battleships</button>
+    <button data-game="settings" type="button">Settings</button>
+  </nav>
+
+  <main id="game-container" class="game-container">
+    <!-- Game content loads here -->
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
