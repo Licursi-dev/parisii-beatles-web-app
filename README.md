@@ -16,6 +16,7 @@ The Parisii Beatles Web App is a browser-based educational application designed 
 - Adjustable text sizing
 - Designed for desktop and modern web browsers 
 - Local storage support for saved settings and scores
+- Mobile responsive
 
 ## Technologies Used
 
