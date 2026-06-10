@@ -6,6 +6,18 @@ An accessibility-focused classroom engagement web application featuring Beatles-
 
 The Parisii Beatles Web App is a browser-based educational application designed to support classroom engagement through interactive Beatles-themed activities. The project combines entertainment with learning by providing a collection of tools and games suitable for group participation and classroom use.
 
+## Project Inspiration
+
+The Parisii Beatles Web App was inspired by my IT Technician Bootcamp tutor, Ian Paris.
+
+During the course, Ian regularly used creative teaching methods to keep learners engaged. We also shared an interest in The Beatles, and his enthusiasm for both Liverpool and technology made a lasting impression on me.
+
+Ian’s background in the Royal Navy and his commitment to teaching inspired the idea behind the Battleships module. I wanted to create a classroom-focused application that combined educational activities with interactive game mechanics, making learning more engaging while reflecting some of the interests that were often discussed during the course.
+
+Development of the project began during the bootcamp in 2025, where most of the application’s core features were designed, built and tested. However, the concept for Beatles Battleships proved much more challenging. Mapping Beatles song data to a Battleships-style coordinate system required significant experimentation and development, and the feature was not fully completed until 2026.
+
+This project represents more than a technical exercise. It demonstrates how inspiration from teaching, personal interests and real classroom experiences can be transformed into a complete software application. It also reflects an important lesson from the course: that ambitious ideas can be achieved through persistence, iteration and a willingness to keep developing them until they are finished.
+
 ## Features
 
 - Interactive seat allocation system
