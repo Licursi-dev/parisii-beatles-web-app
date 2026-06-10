@@ -234,8 +234,6 @@ function revealShipStatus(fleetColor, shipName) {
 
 export const battleshipsGame = {
   init(container) {
-    localStorage.removeItem("bb-scores");
-    localStorage.removeItem("bb-team-names");
     const savedScores = JSON.parse(localStorage.getItem("bb-scores") || '{"red":0,"blue":0}');
     const savedTeams = JSON.parse(localStorage.getItem("bb-team-names") || '{"red":"Red Team","blue":"Blue Team"}');
 
