@@ -1,5 +1,259 @@
 Application Architecture
 
+index.html – Application Shell
+
+Purpose
+
+How It Works
+
+1. The browser loads index.html.
+2. styles.css is loaded.
+3. The page header and navigation bar are displayed.
+4. app.js loads as a JavaScript module.
+5. Accessibility preferences are applied.
+6. Navigation controls are connected.
+7. The Home page is loaded into the game container.
+
+Page Structure
+
+* Header containing the application title
+* Accessibility controls
+* Navigation menu
+* Main game container
+
+Navigation System
+
+* Home
+* Seat Selector
+* Bingo
+* Quiz
+* Battleships
+* Settings
+
+Each navigation button contains a data-game attribute which is used by router.js to determine which module should be displayed.
+
+Main Content Area
+
+The game-container element acts as the application's display area. Individual modules are dynamically rendered into this container by the router.
+
+Accessibility Support
+
+The page includes:
+
+* Semantic HTML elements
+* aria-label attributes
+* aria-pressed state tracking
+* Responsive viewport settings
+
+Why This Is Useful
+
+The index.html file provides the foundation for the entire application. It creates a consistent layout while allowing JavaScript modules to load content dynamically, supporting the single-page application architecture used throughout the project.
+
+
+css/styles.css – Global Styling System
+
+The styles.css file controls the visual design of the Parisii Beatles Web App. It provides the main layout, colour system, responsive behaviour, accessibility styling and game-specific interface design.
+
+Purpose
+
+The file acts as the central styling system for the entire application. It keeps the visual design consistent across the Home page, Settings page, Seat Selector, Bingo Caller and Battleships game.
+
+Core Design System
+
+The stylesheet uses CSS custom properties to define the main design values.
+
+These include:
+
+* Background colour
+* Surface colour
+* Text colour
+* Muted text colour
+* Border colour
+* Accent colours
+* Border radius
+* Shadow styles
+* Maximum content width
+* Font sizing
+
+Using shared variables helps keep the interface consistent and makes future design changes easier.
+
+Theme Support
+
+The stylesheet supports multiple appearance modes:
+
+* Light theme
+* Dark theme
+* High-contrast mode
+* Larger text mode
+
+These modes are controlled by CSS classes added to the body element:
+
+* theme-dark
+* contrast-high
+* font-large
+
+These classes are applied by the JavaScript preferences system.
+
+Accessibility Styling
+
+The stylesheet includes accessibility-focused styling for:
+
+* Focus states
+* Keyboard navigation
+* Button hover states
+* aria-pressed active states
+* Larger text scaling
+* High-contrast borders
+* Reduced motion support
+
+The reduced motion section allows animations and transitions to be disabled if a low-motion class is applied.
+
+Layout System
+
+The file defines the main layout for:
+
+* Header
+* Navigation bar
+* Main game container
+* Shared panels
+* Cards
+* Forms
+* Buttons
+
+The layout uses flexible spacing, maximum widths and wrapping behaviour to help the app work across different screen sizes.
+
+Header and Navigation
+
+The header contains the application title and accessibility controls.
+
+The navigation bar uses flexible wrapping so buttons can move onto new lines on smaller screens.
+
+This helps keep navigation usable on desktop, tablet and mobile layouts.
+
+Shared Components
+
+Several reusable UI styles are defined for use across the application.
+
+These include:
+
+* Panels
+* Cards
+* Buttons
+* Primary buttons
+* Form fields
+* Select menus
+* Text inputs
+* Warning messages
+* Muted text
+
+This avoids repeating the same styling rules across each game module.
+
+Home Page Styling
+
+The Home page uses a responsive card grid.
+
+Each activity is displayed inside a card, allowing the homepage to act as a clear dashboard for the application.
+
+Settings Page Styling
+
+The Settings page uses grouped blocks and grid layouts to organise appearance and game settings.
+
+This makes the controls easier to read and keeps related options grouped together.
+
+Seat Selector Styling
+
+The Seat Selector section includes styles for:
+
+* Seat controls
+* Mode controls
+* Name input fields
+* Warning messages
+* Random quote display
+* Seat grid
+* Claimed and available seats
+
+The seat grid uses responsive columns so the layout adapts to the available screen width.
+
+Bingo Styling
+
+The Bingo section includes the largest amount of specialised styling.
+
+It controls:
+
+* Bingo top bar
+* Ball selectors
+* Action buttons
+* Main bingo stage
+* Large current ball
+* Called balls history
+* Countdown overlay
+* Finish overlay
+* Bingo letter animation
+* Confetti-style finish effect
+* B/I/N/G/O colour groups
+
+The styling helps make the Bingo Caller feel more interactive and visually engaging.
+
+Battleships Styling
+
+The Battleships section includes custom layout and visual rules for:
+
+* Game board layout
+* Board wrappers
+* Grid cells
+* Hit and miss markers
+* Revealed ships
+* Team input panels
+* Scoreboard
+* Fleet status displays
+* Torpedo animation
+* Yellow submarine animation
+* Win effects
+* Cheat sheet panel
+
+These styles support the custom image-based Battleships game interface.
+
+Responsive Design
+
+The stylesheet includes responsive rules for smaller screens.
+
+Examples include:
+
+* Smaller bingo ball sizing on mobile screens
+* Flexible navigation wrapping
+* Responsive card grids
+* Mobile-friendly watermark scaling
+* Board sizing using max-width values
+
+This helps the application remain usable across different screen sizes.
+
+Branding
+
+The stylesheet includes a small fixed licursi.dev watermark.
+
+This acts as a portfolio-style signature without interfering with the main content.
+
+Why This Is Useful
+
+This file provides the visual foundation for the whole project. It keeps the application consistent, accessible and responsive while supporting the different requirements of each game module.
+
+The stylesheet demonstrates:
+
+* CSS custom properties
+* Theme switching
+* Responsive layout design
+* Reusable component styling
+* Accessibility-aware focus states
+* Animation effects
+* Game-specific interface design
+* Clear visual organisation
+
+By keeping the styling in one main file, the project has a single source of truth for its visual design.
+
+
+
+
+
 app.js – Application Entry Point
 
 The app.js file acts as the central controller for the application. It is responsible for initialising the website when the page loads.
@@ -624,7 +878,691 @@ This module demonstrates several front-end development concepts:
 The quiz module is a strong example of how the project combines classroom interaction, game logic and state management in a browser-based application.
 
 
+## games/battleships.js – Battleships Module
 
+### Purpose
+
+The Battleships module is a Beatles-themed adaptation of the classic Battleships game. Instead of firing at grid coordinates directly, players use their knowledge of Beatles song release years and chart performance to locate and sink enemy ships.
+
+### Main Responsibilities
+
+This module is responsible for:
+
+* Building the game boards
+* Creating fleets for both teams
+* Managing turn-based gameplay
+* Converting song data into board coordinates
+* Handling hits, misses and ship destruction
+* Tracking scores
+* Saving team names and scores
+* Displaying animations and game feedback
+
+### Asset Management
+
+The game uses a central ASSETS object to manage all visual resources.
+
+These include:
+
+* Board background images
+* Hit markers
+* Miss markers
+* Torpedo animations
+* Yellow submarine graphics
+* Red fleet ship images
+* Blue fleet ship images
+
+Using a single asset configuration makes the game easier to maintain because image paths only need to be updated in one place.
+
+### Song Data
+
+The module contains a collection of Beatles songs with:
+
+* Song title
+* Release year
+* Number of chart weeks
+
+Example:
+
+javascript {   name: "Hey Jude",   year: 1968,   weeks: 16 } 
+
+These values are used to generate coordinates on the game board.
+
+### Coordinate System
+
+The game board consists of a 10 × 10 grid.
+
+Columns represent years:
+
+* 1961
+* 1962
+* 1963
+* 1964
+* 1965
+* 1966
+* 1967
+* 1968
+* 1969
+* 1970
+
+Rows represent chart-week ranges:
+
+* 0 weeks
+* 1–3 weeks
+* 4–6 weeks
+* 7–9 weeks
+* 10–12 weeks
+* 13–15 weeks
+* 16–18 weeks
+* 19–21 weeks
+* 22–24 weeks
+* 25–33 weeks
+
+The getIndex() function converts a song's year and chart weeks into a unique board position.
+
+### Fleet Creation
+
+Each team receives a fleet containing:
+
+* Carrier (5 spaces)
+* Battleship (4 spaces)
+* Cruiser (3 spaces)
+* Submarine (3 spaces)
+* Destroyer (2 spaces)
+
+The createFleet() function randomly assigns song coordinate groups to each ship.
+
+This ensures that every game starts with a different fleet layout.
+
+### Board Generation
+
+The buildBoard() function dynamically creates the 100 board cells used during gameplay.
+
+This allows the board to be rebuilt easily when a new game starts.
+
+### Team Management
+
+The game supports two teams:
+
+* Red Team
+* Blue Team
+
+Users can customise team names before playing.
+
+The module updates:
+
+* Fleet labels
+* Scoreboard labels
+* Turn indicators
+
+whenever team names change.
+
+### Local Storage
+
+The game uses localStorage to save:
+
+#### Scores
+
+Stored using:
+
+text bb-scores 
+
+#### Team Names
+
+Stored using:
+
+text bb-team-names 
+
+This allows scores and team names to persist between browser sessions.
+
+### Turn System
+
+Gameplay alternates between:
+
+* Red Team
+* Blue Team
+
+The active team enters:
+
+* Release year
+* Chart weeks
+
+The game converts these values into a board coordinate and checks whether it matches the current target location.
+
+### Hit Detection
+
+The handleShot() function manages attacks.
+
+When a player fires:
+
+1. Input values are validated.
+2. Coordinates are calculated.
+3. A torpedo animation is launched.
+4. The target cell is checked.
+5. A hit or miss marker is displayed.
+6. Ship status is updated.
+
+### Ship Destruction
+
+When every part of a ship has been hit:
+
+* The ship is marked as sunk.
+* The ship image becomes visible in the fleet panel.
+* A status message is displayed.
+
+The allShipsSunk() function checks whether an entire fleet has been destroyed.
+
+### Final Turn Rule
+
+To keep matches fair, the game includes a final-turn system.
+
+When one fleet is destroyed:
+
+* The opposing team receives one final shot.
+* Scores are updated.
+* The winner is determined after the final turn is completed.
+
+### Animations
+
+The module includes several visual effects:
+
+* Torpedo launch animation
+* Yellow submarine animation
+* Hit markers
+* Miss markers
+* Ship reveal animations
+* Victory flash effects
+
+These features help make the game feel more interactive and engaging.
+
+### Cheat Sheet
+
+A built-in cheat sheet provides reference information for:
+
+* Song names
+* Release years
+* Chart weeks
+
+This allows the game to be used as both a competition and a learning activity.
+
+### Why This Module Is Important
+
+This module demonstrates:
+
+* Dynamic board generation
+* Data-driven game design
+* Turn-based game logic
+* State management
+* Animation handling
+* Local storage persistence
+* DOM manipulation
+* User input validation
+* Educational gamification
+
+The Battleships module is one of the most technically complex sections of the Parisii Beatles Web App because it combines historical Beatles data, game mechanics, animations and persistent scoring into a single interactive experience.
+
+
+songs.js – Beatles Song Library
+
+The songs.js file stores the Beatles song data used throughout the application. It provides a central collection of song titles that can be accessed by multiple modules without duplicating information.
+
+Responsibilities
+
+Stores Beatles song titles in a structured format.
+Provides song data to other modules.
+Supports random song selection within games.
+Separates application data from application logic.
+Makes future updates to the song library easier.
+
+How It Works
+
+The file exports a single array called songList.
+
+Each entry contains the name of a Beatles song:
+
+{
+  name: "Hey Jude"
+}
+
+Other modules can import songList and use the data when required.
+
+For example, the Seat Selector module imports songs.js and randomly assigns songs to students. Because the song data is stored separately from the game logic, new songs can be added without changing the code that uses them.
+
+This file acts as a reusable data source for the application and helps keep the project organised and maintainable.
+
+
+
+data/quizQuestions.js – Quiz Question Database
+
+The data/quizQuestions.js file stores all quiz questions used by the Magical Mystery Quiz activity. It acts as the central question database for the quiz system.
+
+Purpose
+
+The file provides a structured collection of Beatles-themed multiple-choice questions that can be loaded by the quiz module during gameplay.
+
+Separating the question data from the quiz logic makes the application easier to maintain and expand.
+
+Question Structure
+
+Each question is stored as an object containing:
+
+* Unique question ID
+* Difficulty level
+* Question text
+* Four answer options
+* Correct answer index
+* Supporting fact
+
+This structure allows the quiz module to display questions, validate answers and provide educational feedback after each round.
+
+Question Categories
+
+Questions cover a wide range of Beatles-related topics, including:
+
+* Band history
+* Albums
+* Songs
+* Films
+* Members
+* Recording sessions
+* Chart achievements
+* Liverpool history
+* Solo careers
+* Famous events
+
+This variety helps keep the quiz engaging while testing different areas of Beatles knowledge.
+
+Difficulty Levels
+
+Questions are assigned difficulty ratings:
+
+* Easy
+* Medium
+
+The quiz module can use these values when filtering questions by difficulty before a game begins.
+
+Question Organisation
+
+The question bank is divided into two sections:
+
+* QUIZ_QUESTIONS_PART1
+* QUIZ_QUESTIONS_PART2
+
+This improves readability and makes the large dataset easier to manage during development.
+
+At the end of the file, both sections are combined into a single exported array:
+
+quizQuestions
+
+This provides a single source of quiz data for the rest of the application.
+
+Educational Facts
+
+Every question includes a fact field.
+
+After a question is answered, the quiz can display this fact to provide additional Beatles knowledge and context.
+
+Examples include:
+
+* Recording information
+* Historical events
+* Chart achievements
+* Songwriting details
+* Album background information
+
+This transforms the quiz from a simple game into a learning activity.
+
+Integration With Quiz Module
+
+The primary user of this file is:
+
+* games/quiz.js
+
+The quiz module imports quizQuestions and uses the data to:
+
+* Build question decks
+* Filter by difficulty
+* Shuffle questions
+* Display answer options
+* Reveal correct answers
+* Show supporting facts
+
+Design Benefits
+
+This approach provides several advantages:
+
+* Separates data from game logic
+* Simplifies maintenance
+* Makes adding new questions easier
+* Supports difficulty filtering
+* Supports question shuffling
+* Improves code organisation
+* Encourages future expansion
+
+Why This Is Useful
+
+Keeping quiz content inside a dedicated data file makes the application easier to update and maintain. New questions can be added without changing the quiz engine itself, allowing the question database to grow independently of the gameplay logic.
+
+
+
+data/quotes.js – Quotes Database
+
+The data/quotes.js file stores the collection of quotes used throughout the application. It acts as a reusable source of motivational, philosophical and historical quotations.
+
+Purpose
+
+The file provides a central database of quotes that can be displayed by other modules without duplicating content throughout the project.
+
+Separating quote data from application logic improves organisation and makes future updates easier.
+
+Quote Structure
+
+Each quote is stored as an object containing:
+
+* Quote text
+* Author name
+
+This structure allows the application to display both the quotation and its attribution when required.
+
+Quote Categories
+
+The collection includes quotes from a variety of historical figures, philosophers and writers, including:
+
+* Socrates
+* Aristotle
+* Marcus Aurelius
+* Seneca
+* Confucius
+* Lao Tzu
+* Albert Einstein
+* Theodore Roosevelt
+* Martin Luther King Jr.
+* Mahatma Gandhi
+* Oscar Wilde
+* Mark Twain
+
+The wide variety of authors helps provide diverse and engaging content.
+
+How It Works
+
+The module exports a single array called:
+
+QUOTES
+
+Other modules can import this array and select quotes for display.
+
+The data can be used for:
+
+* Random quote generation
+* Motivational messages
+* Educational content
+* Classroom engagement features
+
+Random Selection
+
+The quotes are designed to work well with randomisation systems.
+
+Modules can select a random entry from the array whenever a new quote needs to be displayed, helping ensure variety for users.
+
+Integration With Other Modules
+
+The primary user of this file is:
+
+* games/seat.js
+
+The Seat Selector module displays random quotes during seat assignment activities to provide additional interest and engagement.
+
+Design Benefits
+
+This approach provides several advantages:
+
+* Separates content from application logic
+* Simplifies maintenance
+* Makes adding new quotes easier
+* Supports random quote generation
+* Encourages reuse across modules
+* Improves project organisation
+
+Why This Is Useful
+
+Keeping quote data in a dedicated module makes the application easier to maintain and expand. New quotations can be added without changing the code that displays them, allowing content updates to be made independently from application functionality.
+
+
+assets/board and assets/markers – Battleships Visual Assets
+
+The assets/board and assets/markers folders contain the visual resources used by the Battleships module.
+
+Purpose
+
+These assets provide the graphical game board and the visual feedback shown when players successfully hit or miss a target.
+
+Board Asset
+
+Folder:
+
+assets/board
+
+File:
+
+* bb_board.png
+
+The board image forms the background of the Battleships game.
+
+It contains:
+
+* The 10 × 10 game grid
+* Year labels from 1961–1970
+* Chart-week labels
+* Beatles-themed underwater artwork
+* Decorative Yellow Submarine styling
+
+The board image is displayed underneath the dynamically generated grid cells created by the Battleships module.
+
+Marker Assets
+
+Folder:
+
+assets/markers
+
+Files:
+
+* bb_marker_hit.png
+* bb_marker_miss.png
+
+These images provide visual feedback after a player takes a shot.
+
+Hit Marker
+
+The hit marker is displayed when a player successfully strikes part of an enemy ship.
+
+It shows:
+
+* An underwater explosion effect
+* A damaged submarine symbol
+* A bright highlighted impact graphic
+
+This makes successful attacks immediately visible to both teams.
+
+Miss Marker
+
+The miss marker is displayed when a player's shot does not hit a ship.
+
+It shows:
+
+* A water splash effect
+* Ripple animations
+* A calmer visual indicator than the hit marker
+
+This clearly distinguishes missed shots from successful attacks.
+
+How They Work Together
+
+During gameplay:
+
+1. The board image provides the playing surface.
+2. The Battleships module converts player inputs into coordinates.
+3. The selected grid cell is checked for a ship.
+4. A hit or miss marker is placed onto the board.
+5. The marker remains visible for the remainder of the game.
+
+Why These Assets Are Important
+
+These visual resources improve the user experience by:
+
+* Making the game easier to understand
+* Providing immediate visual feedback
+* Reinforcing the Beatles-themed presentation
+* Supporting the Battleships gameplay mechanics
+* Creating a more engaging and professional appearance
+
+assets/ships – Battleships Fleet Assets
+
+The assets/ships folder contains the ship graphics used by the Battleships module.
+
+Purpose
+
+These images visually represent the fleets used during gameplay. Ships remain hidden while the game is in progress and are revealed when they are sunk.
+
+Fleet Structure
+
+Each team receives a fleet consisting of five ship types:
+
+* Carrier
+* Battleship
+* Cruiser
+* Submarine
+* Destroyer
+
+To support both teams, each ship is provided in two colour variations:
+
+* Blue Fleet
+* Red Fleet
+
+Ship Files
+
+Battleship
+
+* bb_ship_battleship_blue.png
+* bb_ship_battleship_red.png
+
+Carrier
+
+* bb_ship_carrier_blue.png
+* bb_ship_carrier_red.png
+
+Cruiser
+
+* bb_ship_cruiser_blue.png
+* bb_ship_cruiser_red.png
+
+Destroyer
+
+* bb_ship_destroyer_blue.png
+* bb_ship_destroyer_red.png
+
+Submarine
+
+* bb_ship_submarine_blue.png
+* bb_ship_submarine_red.png
+
+How They Are Used
+
+At the start of a game, each team is assigned a randomly generated fleet location.
+
+Ships are initially hidden from view.
+
+When all coordinate positions belonging to a ship have been successfully hit:
+
+1. The ship is marked as sunk.
+2. The corresponding ship image is revealed.
+3. The fleet display updates to show the destroyed vessel.
+4. Players receive visual confirmation of their progress.
+
+Visual Design
+
+The ship graphics use a simple stylised design that matches the Beatles-themed naval appearance of the game.
+
+The separate red and blue versions help players quickly identify which fleet each ship belongs to.
+
+Why These Assets Are Important
+
+These assets improve gameplay by:
+
+* Providing visual feedback when ships are destroyed.
+* Making fleet progress easier to track.
+* Supporting the team-based game structure.
+* Improving player engagement.
+* Reinforcing the Battleships theme throughout the application.
+
+assets/theme – Battleships Animation Assets
+
+The assets/theme folder contains the animated visual assets used during Battleships gameplay.
+
+Purpose
+
+These assets help transform a traditional Battleships game into a Beatles-themed experience by replacing standard military-style effects with custom Beatles-inspired animations.
+
+Files
+
+* bb_torpedo.png
+* bb_yellow_submarine.png
+
+Torpedo Asset
+
+File:
+
+* bb_torpedo.png
+
+The torpedo image is used during attack sequences.
+
+When a player enters a release year and chart-week combination, the Battleships module converts those values into a board coordinate.
+
+After the coordinate is calculated:
+
+1. A torpedo animation is launched.
+2. The torpedo moves toward the target location.
+3. The board checks whether the coordinate contains a ship.
+4. A hit or miss marker is displayed.
+
+This animation provides visual feedback before the attack result is revealed.
+
+Yellow Submarine Asset
+
+File:
+
+* bb_yellow_submarine.png
+
+The Yellow Submarine graphic is used as the central Beatles-themed animation within the game.
+
+Rather than using traditional naval imagery, the application uses the famous Yellow Submarine to reinforce the Beatles theme.
+
+During gameplay, the Yellow Submarine appears as part of the attack sequence and visual effects system.
+
+It helps create a stronger connection between the game mechanics and the Beatles content used throughout the application.
+
+How These Assets Work Together
+
+When a team enters attack coordinates:
+
+1. The coordinate is validated.
+2. The Battleships module converts the values into a board location.
+3. The Yellow Submarine animation is triggered.
+4. A torpedo is launched toward the target.
+5. The game determines whether the attack is a hit or a miss.
+6. The appropriate marker is displayed.
+7. Ship status is updated if damage has occurred.
+
+Why These Assets Are Important
+
+These assets improve the game by:
+
+* Reinforcing the Beatles theme.
+* Providing visual feedback during attacks.
+* Making gameplay feel more interactive.
+* Supporting the animation system.
+* Creating a more engaging player experience.
+* Distinguishing the game from a traditional Battleships implementation.
+
+  
 
 
 
