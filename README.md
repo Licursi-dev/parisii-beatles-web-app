@@ -34,5 +34,17 @@ Accessibility was a key consideration throughout development. The application in
 The application was designed to support classroom engagement and can be used for quizzes, team activities, seating plans and interactive learning sessions.
 
 ## Purpose
+This project was created to demonstrate front-end development, accessibility awareness, user interface design and modular JavaScript development.
 
-This project was created to demonstrate front-end development, accessibility awareness, user interface design and modular JavaScript development. It forms part of a wider portfolio showcasing web development and educational technology projects.
+© 2026 Christian Licursi
+
+The Parisii Beatles Web App and all original code, artwork,
+
+documentation and game designs contained within this project
+
+are protected by copyright.
+
+No part of this project may be reproduced, redistributed or
+
+commercially exploited without permission.
+
