@@ -48,7 +48,7 @@ The application was designed to support classroom engagement and can be used for
 ## Purpose
 This project was created to demonstrate front-end development, accessibility awareness, user interface design and modular JavaScript development.
 
-© 2026 Christian Licursi
+Copyright © 2026 Licursi.dev. All Rights Reserved.
 
 The Parisii Beatles Web App and all original code, artwork,
 
