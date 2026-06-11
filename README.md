@@ -56,7 +56,7 @@ documentation and game designs contained within this project
 
 are protected by copyright.
 
-No part of this project may be reproduced, redistributed or
+This project is provided for portfolio and educational viewing purposes.
 
-commercially exploited without permission.
+No permission is granted to copy, redistribute, modify or reuse the code without written permission from the author.
 
