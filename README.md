@@ -52,9 +52,7 @@ Copyright © 2026 Licursi.dev. All Rights Reserved.
 
 The Parisii Beatles Web App and all original code, artwork,
 
-documentation and game designs contained within this project
-
-are protected by copyright.
+documentation and game designs contained within this project are protected by copyright.
 
 This project is provided for portfolio and educational viewing purposes.
 
