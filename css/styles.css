@@ -1599,7 +1599,7 @@ select{
   @media (min-width: 769px) {
     .bb-game-layout {
       display: grid;
-      grid-template-columns: 550px 550px;
+      grid-template-columns: 360px 360px;
       gap: 30px;
       justify-content: center;
       align-items: start;
