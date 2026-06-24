@@ -1562,7 +1562,10 @@ These assets improve the game by:
 * Creating a more engaging player experience.
 * Distinguishing the game from a traditional Battleships implementation.
 
-* Development Notes
+
+
+
+Development Notes
 
 Responsive Layout
 
