@@ -609,7 +609,7 @@ container.appendChild(cheatPanel);
         const marker = document.createElement("img");
         marker.style.position = "relative";
         marker.style.zIndex = "10";
-        marker.style.width = "85%";
+        marker.style.width = "400%";
 
         if (inputIndex === currentPrompt.index) {
           marker.src = ASSETS.hit;
