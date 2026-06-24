@@ -1617,7 +1617,7 @@ select{
     .bb-panel {
       width: 1200px;
       display: grid;
-      grid-template-columns: 300px 560px 300px;
+      grid-template-columns: 300px 360px 300px;
       gap: 16px;
       margin: 0 auto;
       align-items: start;
