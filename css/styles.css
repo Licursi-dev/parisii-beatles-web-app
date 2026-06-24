@@ -939,8 +939,8 @@ body::after{
 
 .bb-wrapper{
   position:relative;
-  width:450px;
-  max-width:450px;
+  width:550px;
+  max-width:95vw;
   overflow:hidden;
 }
 
