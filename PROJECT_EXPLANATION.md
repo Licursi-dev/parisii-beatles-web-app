@@ -1562,6 +1562,40 @@ These assets improve the game by:
 * Creating a more engaging player experience.
 * Distinguishing the game from a traditional Battleships implementation.
 
+* Development Notes
+
+Responsive Layout
+
+The game is fully playable on desktop and mobile devices, but I experimented with several desktop layouts to improve the user experience.
+
+One challenge was balancing the information panel (team controls, fleet status and game messages) with the two game boards. Although CSS Grid made it possible to rearrange elements, changing the panel layout often affected the surrounding page because the grid sizing also influenced the main game layout.
+
+CSS Grid Challenges
+
+During development I explored several layouts including:
+
+* Stacking the team controls vertically.
+* Displaying fleet status panels to the left and right of the controls.
+* Placing the Red and Blue team input panels side-by-side.
+* Using CSS Grid columns to reduce scrolling on desktop.
+
+While some layouts worked individually, they introduced unexpected spacing and alignment issues elsewhere in the page. Rather than over-complicate the CSS, I chose the layout that provided the best balance between readability and stability.
+
+Asset Scaling
+
+The game uses custom PNG graphics for ships, torpedoes and hit markers.
+
+During testing I found that increasing CSS width and height values did not always visually enlarge the ship graphics as expected. This highlighted that image appearance depends not only on CSS sizing but also on the original image dimensions and transparent padding within the PNG assets.
+
+Future Improvements
+
+Potential future improvements include:
+
+* Refining the desktop control panel to make better use of horizontal screen space.
+* Creating larger ship and marker assets specifically for gameplay.
+* Separating the panel layout from the board layout to make responsive adjustments easier.
+* Introducing additional CSS breakpoints for widescreen monitors.
+
   
 
 
