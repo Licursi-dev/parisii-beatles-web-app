@@ -3,7 +3,7 @@
 // Clean display version (no attribution notes)
 
 export const QUOTES = [
-    { text: "Know thyself.", author: "Delphi (ancient Greek maxim)" },
+    { text: "Know thyself.", author: "Delphi" },
     { text: "The unexamined life is not worth living.", author: "Socrates" },
     { text: "No one can make you feel inferior without your consent.", author: "Eleanor Roosevelt" },
     { text: "He who has a why to live can bear almost any how.", author: "Friedrich Nietzsche" },
@@ -39,7 +39,7 @@ export const QUOTES = [
     { text: "Smooth seas do not make skillful sailors.", author: "Proverb" },
     { text: "A ship in harbor is safe, but that is not what ships are built for.", author: "John A. Shedd" },
   
-    { text: "Fortune favors the bold.", author: "Virgil" },
+    { text: "Fortune favours the bold.", author: "Virgil" },
     { text: "Carpe diem.", author: "Horace" },
     { text: "The die is cast.", author: "Julius Caesar" },
     { text: "What we think, we become.", author: "Buddha" },
