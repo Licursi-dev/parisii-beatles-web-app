@@ -333,10 +333,10 @@ export const bingoGame = {
     const finalLine = container.querySelector("#finalLine");
 
     // Stop Bingo timers and sounds when leaving this game
-   const bingoPanel = container.querySelector(".panel");
+    const bingoPanel = container.querySelector(".panel");
 
-   const cleanupObserver = new MutationObserver(() => {
-   if (!bingoPanel.isConnected) {
+    const cleanupObserver = new MutationObserver(() => {
+    if (!bingoPanel.isConnected) {
     stopAllTimers();
 
     if (audioCtx.state !== "closed") {
@@ -345,7 +345,7 @@ export const bingoGame = {
 
     cleanupObserver.disconnect();
    }
- });
+   });
 
 cleanupObserver.observe(container, { childList: true });
 
