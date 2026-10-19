@@ -233,12 +233,12 @@ function revealShipStatus(fleetColor, shipName) {
 }
 
 export const battleshipsGame = {
-  init(container) {
+  init(container) { 
     const savedScores = JSON.parse(localStorage.getItem("bb-scores") || '{"red":0,"blue":0}');
     const savedTeams = JSON.parse(localStorage.getItem("bb-team-names") || '{"red":"Red Team","blue":"Blue Team"}');
 
     container.innerHTML = `
-      <h2>Beatles Battleships</h2>
+      <h2>Test Beatles Battleships</h2>
       <div class="bb-help">
   Enter the song’s year and chart weeks to fire. Match correctly to hit ships. First to sink the fleet wins.
 </div>
@@ -376,42 +376,7 @@ export const battleshipsGame = {
     const redTeamLabel = container.querySelector("#bb-red-team-label");
     const blueTeamLabel = container.querySelector("#bb-blue-team-label");
 
-    const cheatPanel = document.createElement("details");
-cheatPanel.className = "bb-cheat-panel";
-
-cheatPanel.innerHTML = `
-  <summary>Cheat Sheet</summary>
-  <pre class="bb-cheat">
-1961/0 Cry For A Shadow
-1962/18 Love Me Do
-1963/1 My Bonnie
-1963/18 Please Please Me
-1963/21 From Me To You
-1963/22 I Want To Hold Your Hand
-1963/33 She Loves You
-1964/6 Ain't She Sweet
-1964/13 A Hard Day's Night
-1964/13 I Feel Fine
-1964/15 Can't Buy Me Love
-1965/12 Ticket To Ride
-1965/12 Day Tripper / We Can Work It Out
-1965/14 Help!
-1966/11 Paperback Writer
-1966/13 Yellow Submarine / Eleanor Rigby
-1967/11 Penny Lane / Strawberry Fields Forever
-1967/12 Hello Goodbye
-1967/12 Magical Mystery Tour
-1967/13 All You Need Is Love
-1968/8 Lady Madonna
-1968/16 Hey Jude
-1969/12 Something / Come Together
-1969/14 The Ballad Of John And Yoko
-1969/17 Get Back
-1970/10 Let It Be
-  </pre>
-`;
-
-container.appendChild(cheatPanel);
+  
 
     const coordinateGroups = buildCoordinateGroups();
 
@@ -609,7 +574,8 @@ container.appendChild(cheatPanel);
         const marker = document.createElement("img");
         marker.style.position = "relative";
         marker.style.zIndex = "10";
-        marker.style.width = "400%";
+        marker.style.width = "75%";
+
 
         if (inputIndex === currentPrompt.index) {
           marker.src = ASSETS.hit;
