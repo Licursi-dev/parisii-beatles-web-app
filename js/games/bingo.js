@@ -332,6 +332,23 @@ export const bingoGame = {
     const closeOverlayBtn = container.querySelector("#closeOverlay");
     const finalLine = container.querySelector("#finalLine");
 
+    // Stop Bingo timers and sounds when leaving this game
+   const bingoPanel = container.querySelector(".panel");
+
+   const cleanupObserver = new MutationObserver(() => {
+   if (!bingoPanel.isConnected) {
+    stopAllTimers();
+
+    if (audioCtx.state !== "closed") {
+      audioCtx.close().catch(() => {});
+    }
+
+    cleanupObserver.disconnect();
+   }
+ });
+
+cleanupObserver.observe(container, { childList: true });
+
     /* ===============================
        Core logic
     =============================== */
