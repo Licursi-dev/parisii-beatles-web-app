@@ -8,11 +8,9 @@ The Parisii Beatles Web App is a browser-based educational application designed 
 
 ## Project Inspiration
 
-The Parisii Beatles Web App was inspired by my IT Technician Bootcamp tutor, Ian Paris.
+The Parisii Beatles Web App was inspired by my IT Technician Bootcamp tutor. We shared an interest in The Beatles, and his enthusiasm for both Liverpool and technology made a lasting impression on me.
 
-During the course, Ian regularly used creative teaching methods to keep learners engaged. We also shared an interest in The Beatles, and his enthusiasm for both Liverpool and technology made a lasting impression on me.
-
-Ian’s background in the Royal Navy and his commitment to teaching inspired the idea behind the Battleships module. I wanted to create a classroom-focused application that combined educational activities with interactive game mechanics, making learning more engaging while reflecting some of the interests that were often discussed during the course.
+His background in the Royal Navy and his commitment to teaching inspired the idea behind the Battleships module. I wanted to create a classroom-focused application that combined educational activities with interactive game mechanics, making learning more engaging while reflecting some of the interests that were often discussed during the course.
 
 Development of the project began during the bootcamp in 2025, where most of the application’s core features were designed, built and tested. However, the concept for Beatles Battleships proved much more challenging. Mapping Beatles song data to a Battleships-style coordinate system required significant experimentation and development, and the feature was not fully completed until 2026.
 
@@ -26,8 +24,8 @@ This project represents more than a technical exercise. It demonstrates how insp
 - Bingo caller and classroom activity tools
 - Dark mode and high-contrast accessibility settings
 - Adjustable text sizing
-- Designed for desktop and modern web browsers 
-- Local storage support for saved settings and scores
+- Designed for desktop and Mobile responsive
+- Web Storage API (localStorage) for saved settings and scores
 - Mobile responsive
 
 ## Technologies Used
@@ -46,7 +44,7 @@ Accessibility was a key consideration throughout development. The application in
 The application was designed to support classroom engagement and can be used for quizzes, team activities, seating plans and interactive learning sessions.
 
 ## Purpose
-This project was created to demonstrate front-end development, accessibility awareness, user interface design and modular JavaScript development.
+This project was created to explore how interactive web tools can make classroom activities more engaging and accessible. It also demonstrates my ability to turn a personal inspiration into a complete browser-based product using modular JavaScript, responsive interface design, persistent local data and accessibility-focused controls.
 
 Copyright © 2026 Licursi.dev. All Rights Reserved.
 
